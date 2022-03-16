@@ -23,6 +23,12 @@ body {
   flex-direction: column;
 }
 
+.container {
+  border: 2px dashed black;
+  width: 90%;
+  align-self: center;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
