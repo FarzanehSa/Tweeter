@@ -1,0 +1,42 @@
+/* 120 pixels in height
+   Full width of the viewport
+   #4056A1 as its default background colour
+   #FFFFFF as its default font colour
+   <span> within the <nav> uses Bungee as its default font-family
+   1.5ems of space on the right and left between the content and the edges */
+
+   nav {
+    border: 2px dashed black;  /* 🔺 */
+    display: flex;
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    padding: 0.5em 1.5em;
+  
+    position: fixed;
+    align-items: flex-end;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  
+  .logo {
+    border: 2px dashed black;   /* 🔺 */
+    font-size: 1.5em;
+    font-family: 'Bungee', cursive;
+  }
+  
+  .writeTweet {
+    border: 2px dashed black;   /* 🔺 */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dblAngel {
+    border: 2px dashed black;   /* 🔺 */
+    color: red;
+    align-self: center;
+  }
+  .bold {
+    font-weight: 600;
+  }
