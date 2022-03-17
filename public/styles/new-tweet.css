@@ -59,6 +59,10 @@ button {
   color         :white;
 }
 
+.out-of-range {
+  color: red
+}
+
 /* ::placeholder {
   color: DodgerBlue;
   font-weight: 600;
