@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -58,14 +59,46 @@
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form action="/tweets" method="POST">
-          <label for="tweet-text" class="new-tweet-label">What are you humming about?</label>
+          <label for="tweet-text">What are you humming about?</label>
           <!-- <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea> -->
           <textarea name="text" id="tweet-text"></textarea>
-          <div class="new-tweet-footer">
+          <footer>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text" min="0" max="140">140</output>
-          </div>
+          </footer>
         </form>
+      </section>
+      <section id="tweets-container">
+        <article class="tweet">
+          <header>
+            <snap>Sara</snap>
+            <snap>@saraJoon</snap>
+          </header>
+          <p class="tweet-body">We can consider a tweet to be an article, and there's an HTML5 tag for that! I am a last tweet that you received! ABC 123 456 789 4567 90-=8</p>
+          <footer>
+            <snap>1 min ago</snap>
+            <span>
+              <i class="fa-solid fa-flag icon"></i>
+              <i class="fa-solid fa-retweet icon"></i>
+              <i class="fa-solid fa-heart icon"></i>
+            </span>
+          </footer>
+        </article>
+        <article class="tweet">
+          <header>
+            <snap>Mina</snap>
+            <snap>@MinaJoon</snap>
+          </header>
+          <p class="tweet-body">hi</p>
+          <footer>
+            <snap>1 min ago</snap>
+            <span>
+              <i class="fa-solid fa-flag icon"></i>
+              <i class="fa-solid fa-retweet icon"></i>
+              <i class="fa-solid fa-heart icon"></i>
+            </span>
+          </footer>
+        </article>
       </section>
     </main>
   </body>

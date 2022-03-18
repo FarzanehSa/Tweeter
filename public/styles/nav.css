@@ -5,38 +5,41 @@
    <span> within the <nav> uses Bungee as its default font-family
    1.5ems of space on the right and left between the content and the edges */
 
-   nav {
-    border: 2px dashed black;  /* 🔺 */
-    display: flex;
-    height: 120px;
-    width: 100%;
-    background-color: #4056A1;
-    color: #FFFFFF;
-    padding: 0.5em 1.5em;
-  
-    position: fixed;
-    align-items: flex-end;
-    justify-content: space-between;
-    z-index: 2;
+   body > nav {
+    border            : 2px dashed black;  /* 🔺 */
+    position          : fixed;
+    z-index           : 2;
+    
+    width             : 100%;
+    height            : 120px;
+    padding           : 0.5em 1.5em;
+    
+    display           : flex;
+    justify-content   : space-between;
+    align-items       : flex-end;
+    
+    color             : #FFFFFF;
+    background-color  : #4056A1;
   }
   
   .logo {
-    border: 2px dashed black;   /* 🔺 */
-    font-size: 1.5em;
-    font-family: 'Bungee', cursive;
+    border      : 2px dashed black;   /* 🔺 */
+    font-family : 'Bungee', cursive;
+    font-size   : 1.5em;
   }
   
   .writeTweet {
-    border: 2px dashed black;   /* 🔺 */
-    display: flex;
-    flex-direction: column;
+    border          : 2px dashed black;   /* 🔺 */
+    display         : flex;
+    flex-direction  : column;
   }
   
   .dblAngel {
-    border: 2px dashed black;   /* 🔺 */
-    color: red;
-    align-self: center;
+    border      : 2px dashed black;   /* 🔺 */
+    align-self  : center;
+    color       : red;
   }
+
   .bold {
-    font-weight: 600;
+    font-weight : 600;
   }
