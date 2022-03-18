@@ -27,10 +27,10 @@ const data = [
 // takes in an array of tweet objects
 // appending each one to the #tweets-container.
 const renderTweets = function(tweets) {
-  const $parent = $("#tweets-container")
+  const $tweetsContainer = $("#tweets-container")
   tweets.forEach(tweet => {
     const $tweet = createTweetElement(tweet);
-    $parent.append($tweet);
+    $tweetsContainer.append($tweet);
   });
 };
 
