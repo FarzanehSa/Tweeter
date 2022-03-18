@@ -10,7 +10,7 @@ $(document).ready(function() {
     const remainLen = maxLen - inputLen;
     // travel domTree to find counter and update it!
     const counter = $(this).parent().find("output.counter");
-    counter[0].innerText = remainLen;
+    $(counter).text(remainLen);
     // make or remove out-of-range class base on remaining length
     if (remainLen < 0) {
       $(counter).addClass('out-of-range')

@@ -4,7 +4,6 @@
    The background-color should be a different colour than the nav and the body */
 
    body > header {
-    border            : 2px dashed black;   /* 🔺 */
     position          : relative;
     z-index           : 1;
 
@@ -21,15 +20,12 @@
   }
   
   .avatar {
-    border      : 2px dashed black;   /* 🔺 */
     height      : 160px;
     align-self  : center;
   }
 
   .userName {
-    border      : 2px dashed black;   /* 🔺 */
     position    : absolute;
-    /* height: 25%; */
     align-self  : flex-end;
   }
 
