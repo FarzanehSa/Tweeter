@@ -1,36 +1,10 @@
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 // takes in an array of tweet objects
 // appending each one to the #tweets-container.
 const renderTweets = function(tweets) {
   const $tweetsContainer = $("#tweets-container")
   tweets.forEach(tweet => {
     const $tweet = createTweetElement(tweet);
-    $tweetsContainer.append($tweet);
+    $tweetsContainer.prepend($tweet);
   });
 };
 
@@ -48,7 +22,7 @@ const createTweetElement = function(tweetData) {
   </header>
   <p class="tweet-body">${tweetData.content.text}</p>
   <footer>
-    <snap>${tweetData.created_at}</snap>
+    <snap>${timeago.format(tweetData.created_at)}</snap>
     <span>
       <i class="fa-solid fa-flag icon"></i>
       <i class="fa-solid fa-retweet icon"></i>
@@ -60,8 +34,33 @@ const createTweetElement = function(tweetData) {
   return $tweet;
 };
 
-// Run the code!
+// Document loaded!
 $(()=> {
+  
   console.log("🟢 Ready - Fetch old tweets")
-  renderTweets(data);
+
+  // 🚨🚨 check if empty text
+  $(document).submit(function(event) {
+    console.log('🟠 Prevent Old Fashion Submit');
+    event.preventDefault();
+    const inputEncoded = $.param($('#tweet-text'));
+    $.post("/tweets",inputEncoded, function() {
+      console.log("🟢 Post Data Successfully!")
+      loadTweets();
+    })
+    .fail(function() {
+      alert( "🛑🛑🛑 \n Error Occured @ Sending New Tweet" );
+    })
+    $('#tweet-text').val('').focus();
+  });
+
+  const loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (tweetsData) {
+      renderTweets(tweetsData);
+    });
+  }
+
+  loadTweets();
+
 });
