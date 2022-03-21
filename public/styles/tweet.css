@@ -24,6 +24,7 @@ article.tweet div.img-name img{
 article.tweet  p.tweet-body {
   width         : 100%;
   min-height    : 1em;
+  overflow-wrap :break-word;
   padding       : 0em 0.7em;
 }
 
