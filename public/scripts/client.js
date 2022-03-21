@@ -25,6 +25,7 @@ const createTweetElement = function(tweetData) {
     </header>
   `);
 
+  // Prevent Cross-Site Scripting by using .text();
   const $p = $('<p>').addClass("tweet-body").text(tweetData.content.text);
   
   const $footer = $(`
@@ -37,6 +38,7 @@ const createTweetElement = function(tweetData) {
       </span>
     </footer>
   `);
+
   $tweet = $("<article>").addClass("tweet").append($header,$p,$footer);
   return $tweet;
 };
@@ -49,15 +51,25 @@ $(()=> {
   $('#new-tweet-form').submit(function(event) {
     console.log('🟠 Prevent Old Fashion Submit');
     event.preventDefault();
+    $(this).find('.errorMsg').text('').hide()
+    // $(this).find('.errorMsg').addClass('hide') // 🟣
     // check if input is empty or too long!
     const inputLen = $(this).children('#tweet-text').val().trim().length;
-    if (inputLen === 0) return alert("🛑🛑🛑 \n Error, Content Is Not Present!");
-    if (inputLen > 140) return alert("🛑🛑🛑 \n Error, Content Is Too Long");
+    if (inputLen === 0) {
+      // $(this).find('.errorMsg').text('* Content Is Not Present!').removeClass('hide');  // 🟣
+      $(this).find('.errorMsg').text('* Content Is Not Present!').slideDown();
+      return ;
+    }
+    if (inputLen > 140) {
+      // $(this).find('.errorMsg').text('* Content Is Too Long!').removeClass('hide');  // 🟣
+      $(this).find('.errorMsg').text('* Content Is Too Long!').slideDown();
+      return ;
+    }
     
     const data = $(this).serialize();
     // disable button temprory
     $(this).find("button").prop('disabled',true);
-    
+
     $.ajax({
       url: "/tweets",
       method: "post",

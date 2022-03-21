@@ -26,9 +26,28 @@
 }
 
 .new-tweet form > footer {
-  padding: 0.2em 0em;
-  border-top : 2px solid black;
+  padding         : 0.2em 0em;
+  border-top      : 2px solid black;
 
+  display         : flex;
+  flex-direction  : column;
+}
+
+footer .errorMsg {
+  min-height: 0px;
+  padding-left: 1em;
+  color : red;
+  font-style: italic;
+}
+
+footer .hide {
+  display: none;
+}
+
+
+
+
+footer #row2 {
   display         : flex;
   justify-content : space-between;
 
@@ -36,7 +55,7 @@
   font-weight     : 600;
 }
 
-.new-tweet form > footer > button {
+footer #row2 button {
   padding       : 10px;
   border        : 1px solid darkblue;
   border-radius : 5px;
@@ -48,7 +67,7 @@
   cursor        : pointer;
 }
 
-.new-tweet form > footer > output.out-of-range {
+footer #row2 output.out-of-range {
   color : red
 }
 
