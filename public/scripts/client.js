@@ -43,25 +43,49 @@ const createTweetElement = function(tweetData) {
   return $tweet;
 };
 
+const goToTop = function() {
+  $(document.documentElement).scrollTop(0);
+  $('#new-tweet-form').slideDown();
+  $('#tweet-text').focus();
+};
+
+const showTopBotton = function() {
+  if ($(document.documentElement.scrollTop)[0] > 80) {
+    $("#scrollTop").css("display","block")
+    $(".writeTweet").css("visibility","hidden")
+  } else {
+    $("#scrollTop").css("display","none")
+    $(".writeTweet").css("visibility","visible")
+  }
+}
+
 // Document loaded!
 $(()=> {
   
   console.log("🟢 Document Ready");
 
+  $('#new-tweet-form').hide();
+
+  $('nav').find('.dblAngel').on('click',() => {
+    if ( $('#new-tweet-form').first().is( ":hidden" ) ) {
+      $('#new-tweet-form').slideDown();
+      $('#tweet-text').focus();
+    } else {
+      $('#new-tweet-form').hide();
+    }
+  });
+
   $('#new-tweet-form').submit(function(event) {
     console.log('🟠 Prevent Old Fashion Submit');
     event.preventDefault();
     $(this).find('.errorMsg').text('').hide()
-    // $(this).find('.errorMsg').addClass('hide') // 🟣
     // check if input is empty or too long!
     const inputLen = $(this).children('#tweet-text').val().trim().length;
     if (inputLen === 0) {
-      // $(this).find('.errorMsg').text('* Content Is Not Present!').removeClass('hide');  // 🟣
       $(this).find('.errorMsg').text('* Content Is Not Present!').slideDown();
       return ;
     }
     if (inputLen > 140) {
-      // $(this).find('.errorMsg').text('* Content Is Too Long!').removeClass('hide');  // 🟣
       $(this).find('.errorMsg').text('* Content Is Too Long!').slideDown();
       return ;
     }
@@ -100,5 +124,9 @@ $(()=> {
   }
 
   loadTweets();
+
+  $(window).scroll(() => {
+    showTopBotton();
+  })
 
 });

@@ -43,7 +43,7 @@
       <span class="logo">tweeter</span>
       <div class="writeTweet">
         <div><span class="bold">Write</span> a new tweet</div>
-        <i class="fa-solid fa-angles-down dblAngel"></i>
+        <button class="dblAngel"><i class="fa-solid fa-angles-down"></i></button>
       </div>
     </nav>
     <header>
@@ -65,7 +65,7 @@
           <!-- <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea> -->
           <textarea name="text" id="tweet-text"></textarea>
           <footer>
-            <span class="errorMsg hide"></span>
+            <span class="errorMsg"></span>
             <div id="row2">
               <button type="submit" id="submit-tweet">Tweet</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
@@ -74,6 +74,7 @@
         </form>
       </section>
       <section id="tweets-container"></section>
+      <button onclick="goToTop()" id="scrollTop"><i class="fa-solid fa-angles-up"></i></button>
     </main>
   </body>
 </html>

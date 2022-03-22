@@ -40,13 +40,6 @@ footer .errorMsg {
   font-style: italic;
 }
 
-footer .hide {
-  display: none;
-}
-
-
-
-
 footer #row2 {
   display         : flex;
   justify-content : space-between;
