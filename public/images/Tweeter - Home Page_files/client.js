@@ -21,7 +21,7 @@ const createTweetElement = function(tweetData) {
         <img src="${tweetData.user.avatars}">
         <snap>${tweetData.user.name}</snap>
       </div>
-      <snap id="userHandle">${tweetData.user.handle}</snap>
+      <snap>${tweetData.user.handle}</snap>
     </header>
   `);
 

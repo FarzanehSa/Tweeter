@@ -108,36 +108,17 @@ body {
     font-size: 4vw;
   }
 } */
-@media (max-width: 650px) {
-  body > nav {
-    /* background-color  : transparent; */
-    font-size: 1.4rem;
-  }
-}
-@media (max-width: 550px) {
-  body > nav {
-    /* background-color  : transparent; */
-    font-size: 1.3rem;
-  }
-}
 
 @media (max-width: 451px) {
   body > nav {
-    /* background-color  : transparent; */
-    font-size: 1.2rem;
+    background-color  : transparent;
+    padding-top: 3vw;
+    font-size: 4vw;
   }
-
   article.tweet header {
+
     flex-direction: column;
-  }
-
-  article.tweet div.img-name {
-    order: 3;
-  }
-
-  #userHandle {
-    display: flex;
-    order:2;
-    align-self: flex-end;
+    justify-content : space-around;
+    align-content:space-between  ;
   }
 }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/normalize.min.css" type="text/css">
+
+    <!-- Bungee Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Tweeter - Home Page_files/css2" rel="stylesheet">
+
+    <!-- Source Sans Pro  300, 600, italic of each -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Tweeter - Home Page_files/css2(1)" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/layout.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/nav.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/header.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/new-tweet.css" type="text/css">
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/tweet.css" type="text/css">
+
+    <!-- External JS -->
+    <script src="./Tweeter - Home Page_files/jquery.min.js"></script>
+    <script src="./Tweeter - Home Page_files/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="./Tweeter - Home Page_files/client.js"></script>
+    <script type="text/javascript" src="./Tweeter - Home Page_files/composer-char-counter.js"></script>
+
+    <!-- font-awesome library -->
+    <link rel="stylesheet" href="./Tweeter - Home Page_files/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  </head>
+
+
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <span class="logo">tweeter</span>
+      <div class="writeTweet" style="visibility: hidden;">
+        <div><span class="bold">Write</span> a new tweet</div>
+        <button class="dblAngel"><i class="fa-solid fa-angles-down"></i></button>
+      </div>
+    </nav>
+    <header class="header">
+      <div class="avatar">
+          <img src="./Tweeter - Home Page_files/profile-hex.png">
+      </div>
+      <br>
+      <div class="userName">
+          <h2>Blue Angel</h2>
+      </div>
+    </header>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form action="http://localhost:8080/tweets" method="POST" id="new-tweet-form">
+          <label for="tweet-text">What are you humming about?</label>
+          <!-- <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea> -->
+          <textarea name="text" id="tweet-text"></textarea>
+          <footer>
+            <span class="errorMsg"></span>
+            <div id="row2">
+              <button type="submit" id="submit-tweet">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </footer>
+        </form>
+      </section>
+      <section id="tweets-container"><article class="tweet"><header>
+      <div class="img-name">
+        <img src="./Tweeter - Home Page_files/z5LNkkB.png">
+        <snap>Ida Gibson</snap>
+      </div>
+      <snap>@Gibson</snap>
+    </header><p class="tweet-body">Or even this one with no space: 1234567890--------------------------------------------------------------------------------------------------</p><footer>
+      <snap>6 hours ago</snap>
+      <span>
+        <i class="fa-solid fa-flag icon"></i>
+        <i class="fa-solid fa-retweet icon"></i>
+        <i class="fa-solid fa-heart icon"></i>
+      </span>
+    </footer></article><article class="tweet"><header>
+      <div class="img-name">
+        <img src="./Tweeter - Home Page_files/lRUnDgU.png">
+        <snap>Laura Guidotti</snap>
+      </div>
+      <snap>@Guidotti100</snap>
+    </header><p class="tweet-body">This is very very very very very very very very very very very very very very very very very very very very very very very very long message</p><footer>
+      <snap>6 hours ago</snap>
+      <span>
+        <i class="fa-solid fa-flag icon"></i>
+        <i class="fa-solid fa-retweet icon"></i>
+        <i class="fa-solid fa-heart icon"></i>
+      </span>
+    </footer></article><article class="tweet"><header>
+      <div class="img-name">
+        <img src="./Tweeter - Home Page_files/DVpDmdR.png">
+        <snap>Steve Hargreaves</snap>
+      </div>
+      <snap>@Hargreaves29</snap>
+    </header><p class="tweet-body">lets play with this app</p><footer>
+      <snap>6 hours ago</snap>
+      <span>
+        <i class="fa-solid fa-flag icon"></i>
+        <i class="fa-solid fa-retweet icon"></i>
+        <i class="fa-solid fa-heart icon"></i>
+      </span>
+    </footer></article><article class="tweet"><header>
+      <div class="img-name">
+        <img src="./Tweeter - Home Page_files/z5LNkkB.png">
+        <snap>Adelaide Caputo</snap>
+      </div>
+      <snap>@MissCaputo</snap>
+    </header><p class="tweet-body">hi</p><footer>
+      <snap>6 hours ago</snap>
+      <span>
+        <i class="fa-solid fa-flag icon"></i>
+        <i class="fa-solid fa-retweet icon"></i>
+        <i class="fa-solid fa-heart icon"></i>
+      </span>
+    </footer></article><article class="tweet"><header>
+      <div class="img-name">
+        <img src="./Tweeter - Home Page_files/nlhLi3I.png">
+        <snap>Descartes</snap>
+      </div>
+      <snap>@rd</snap>
+    </header><p class="tweet-body">Je pense , donc je suis</p><footer>
+      <snap>1 day ago</snap>
+      <span>
+        <i class="fa-solid fa-flag icon"></i>
+        <i class="fa-solid fa-retweet icon"></i>
+        <i class="fa-solid fa-heart icon"></i>
+      </span>
+    </footer></article><article class="tweet"><header>
+      <div class="img-name">
+        <img src="./Tweeter - Home Page_files/73hZDYK.png">
+        <snap>Newton</snap>
+      </div>
+      <snap>@SirIsaac</snap>
+    </header><p class="tweet-body">If I have seen further it is by standing on the shoulders of giants</p><footer>
+      <snap>2 days ago</snap>
+      <span>
+        <i class="fa-solid fa-flag icon"></i>
+        <i class="fa-solid fa-retweet icon"></i>
+        <i class="fa-solid fa-heart icon"></i>
+      </span>
+    </footer></article></section>
+      <button onclick="goToTop()" id="scrollTop" style="display: block;"><i class="fa-solid fa-angles-up"></i></button>
+    </main>
+  
+</body></html>

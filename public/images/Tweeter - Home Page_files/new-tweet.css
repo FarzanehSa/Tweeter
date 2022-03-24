@@ -1,0 +1,71 @@
+.new-tweet {
+  padding         : 0.5em 0.5em;
+  margin          : 0.5em 0.2em;
+
+  display         : flex;
+  flex-direction  : column;
+}
+
+.new-tweet form > label {
+  font-size     : 0.9em;
+  font-weight : 600;
+  color       : DarkSlateGray;
+}
+
+#tweet-text {
+  width         : 100%;
+  min-height    : 1em;
+  padding       : 0em 0.7em;
+  border        : none;
+
+  align-self    : flex-end;
+
+  background    : none;
+  resize        : none;
+  outline       : none;
+}
+
+.new-tweet form > footer {
+  padding         : 0.2em 0em;
+  border-top      : 2px solid black;
+
+  display         : flex;
+  flex-direction  : column;
+}
+
+footer .errorMsg {
+  min-height: 0px;
+  padding-left: 1em;
+  color : red;
+  font-style: italic;
+}
+
+footer #row2 {
+  display         : flex;
+  justify-content : space-between;
+
+  font-family     : 'Bungee', cursive;
+  font-weight     : 600;
+}
+
+footer #row2 button {
+  padding       : 10px;
+  border        : 1px solid darkblue;
+  border-radius : 5px;
+
+  font-size     : 0.9em;
+  color         : seashell;
+  background    : darkblue;
+
+  cursor        : pointer;
+}
+
+footer #row2 output.out-of-range {
+  color : red
+}
+
+/* ::placeholder {
+  color: DodgerBlue;
+  font-weight: 600;
+  font-size: 1em;
+} */
