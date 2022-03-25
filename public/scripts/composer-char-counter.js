@@ -1,7 +1,7 @@
 // This file will be solely responsible for this character counter.
 
 $(document).ready(function() {
-  console.log('🟢 Ready to get a new Tweet!')
+  console.log('🟢 Ready to get a new Tweet!');
 
   // get length of value in textarea after user input anything
   $('#tweet-text').on('input', function(e) {
@@ -13,9 +13,9 @@ $(document).ready(function() {
     $(counter).text(remainLen);
     // make or remove out-of-range class base on remaining length
     if (remainLen < 0) {
-      $(counter).addClass('out-of-range')
+      $(counter).addClass('out-of-range');
     } else {
-      $(counter).removeClass('out-of-range')
+      $(counter).removeClass('out-of-range');
     }
   });
 });

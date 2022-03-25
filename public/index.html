@@ -5,6 +5,7 @@
     <title>Tweeter - Home Page</title>
     
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="icon" href="/images/logo.png" type="image/x-icon" />
     
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -46,7 +47,7 @@
       <span class="logo">tweeter</span>
       <div class="writeTweet">
         <div><span class="bold">Write</span> a new tweet</div>
-        <button class="dblAngel"><i class="fa-solid fa-angles-down"></i></button>
+        <button><i class="fa-solid fa-angles-down"></i></button>
       </div>
     </nav>
     <header class="header">
@@ -62,10 +63,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
         <form action="/tweets" method="POST" id="new-tweet-form">
           <label for="tweet-text">What are you humming about?</label>
-          <!-- <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea> -->
           <textarea name="text" id="tweet-text"></textarea>
           <footer>
             <span class="errorMsg"></span>

@@ -1,0 +1,121 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+@import '_variables';
+
+html {
+  box-sizing        : border-box;
+}
+*, *:before, *:after {
+  box-sizing        : inherit;
+}
+
+body {
+  display           : flex;
+  flex-direction    : column;
+  width             : 100%;
+  min-width         : 279px;
+
+  font-family       : 'Source Sans Pro', sans-serif;
+  font-size         : $primery-font-siza;
+  color             : $primery-font-color;
+  background-color  : $main-background-color;
+  
+  .container {
+    width           : 90%;
+    align-self      : center;
+  }
+
+  #scrollTop {
+    position          : fixed;
+    z-index           : 1;
+
+    padding           : 15px 20px;
+    border            : none;
+    border-radius     : 100px;
+    bottom            : 1em;
+    right             : 0.7em;
+
+    display           : none;
+    color             : $button-font-color;
+    background-color  : $scroll-button-backround-color;
+
+    cursor            : pointer;
+
+    &:hover {
+      animation       : Rotate 1s infinite;
+    }
+  }
+}
+
+@keyframes Rotate {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1600px) {
+  body {
+    display               : grid;
+    grid-template-columns : 34% 50%;
+    justify-content       : center;
+    gap                   : 5em;
+  }
+
+  header.header {
+    border-radius       : 100px;
+    margin              : 200px 30px 0px 0px;
+  }
+
+  main.container {
+    width               : 100%;
+    margin              : 200px 30px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  body > nav {
+    background-color  : transparent;
+    font-size         : 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  body > nav {
+    font-size         : 3vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body > nav {
+    font-size         : 4vw;
+  }
+
+  article.tweet header {
+    display           : flex;
+    flex-direction    : column;
+  }
+
+  article.tweet div.img-name {
+    order             : 2;
+  }
+
+  #userHandle {
+    order             :1;
+    align-self        : flex-end;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  body > nav {
+    font-size       : 5vw;
+    .writeTweet {
+      white-space   : nowrap;
+    }
+  }
+}

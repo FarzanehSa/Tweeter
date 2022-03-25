@@ -6,46 +6,39 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
-  display           : flex;
-  flex-direction    : column;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-
-  font-family       : 'Source Sans Pro', sans-serif;
-  font-size         : 24px;
-  color             : #545149;
-  background-color  : #f4f1ec;
-  
+  min-width: 279px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  color: #545149;
+  background-color: #f4f1ec;
 }
-
-.container {
-  width       : 90%;
-  align-self  : center;
+body .container {
+  width: 90%;
+  align-self: center;
 }
-
-#scrollTop {
-  display: none; /* Hidden by default */
+body #scrollTop {
   position: fixed;
-  bottom: 20px;
-  right: 26px;
   z-index: 1;
-  border: none;
-  background-color: red;
-  color: white;
-  cursor: pointer;
   padding: 15px 20px;
+  border: none;
   border-radius: 100px;
+  bottom: 1em;
+  right: 0.7em;
+  display: none;
+  color: Azure;
+  background-color: firebrick;
+  cursor: pointer;
 }
-
-#scrollTop:hover {
+body #scrollTop:hover {
   animation: Rotate 1s infinite;
 }
 
@@ -57,87 +50,59 @@ body {
     transform: rotate(45deg);
   }
 }
-
-@media (min-width: 1024px) {
-
+@media only screen and (min-width: 1025px) and (max-width: 1600px) {
   body {
-    /* display: flex; */
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 34% 50%;
+    justify-content: center;
+    gap: 5em;
   }
-  body > header.header {
-    width: 30%;
-    margin: 220px 0px 0px 30px;
+
+  header.header {
     border-radius: 100px;
-
-  }
-
-  body > main.container {
-    width: 55%;
     margin: 200px 30px 0px 0px;
-    float: right;
   }
 
-  body > header.header > .avatar {
-    height: 220px;
+  main.container {
+    width: 100%;
+    margin: 200px 30px 0px 0px;
   }
 }
-
-
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   body > nav {
-    background-color  : transparent;
+    background-color: transparent;
+    font-size: 2.5vw;
   }
- } 
-
-/* @media (max-width: 600px) {
+}
+@media only screen and (max-width: 769px) {
   body > nav {
-    background-color  : transparent;
-    padding-top: 3vw;
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body > nav {
     font-size: 4vw;
-    overflow-wrap:initial;
-    word-wrap: unset;
-  }
-} */
-
-
-/* @media (max-width: 500px) {
-  body > nav {
-    background-color  : transparent;
-    padding-top: 3vw;
-    font-size: 4vw;
-  }
-} */
-@media (max-width: 650px) {
-  body > nav {
-    /* background-color  : transparent; */
-    font-size: 1.4rem;
-  }
-}
-@media (max-width: 550px) {
-  body > nav {
-    /* background-color  : transparent; */
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 451px) {
-  body > nav {
-    /* background-color  : transparent; */
-    font-size: 1.2rem;
   }
 
   article.tweet header {
+    display: flex;
     flex-direction: column;
   }
 
   article.tweet div.img-name {
-    order: 3;
+    order: 2;
   }
 
   #userHandle {
-    display: flex;
-    order:2;
+    order: 1;
     align-self: flex-end;
+  }
+}
+@media only screen and (max-width: 280px) {
+  body > nav {
+    font-size: 5vw;
+  }
+  body > nav .writeTweet {
+    white-space: nowrap;
   }
 }

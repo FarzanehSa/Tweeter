@@ -11,7 +11,7 @@ const renderTweets = function(tweets) {
   });
 };
 
-// takes in a tweet object 
+// takes in a tweet object
 // returns a tweet <article> element containing the entire HTML structure of the tweet
 const createTweetElement = function(tweetData) {
   
@@ -43,31 +43,32 @@ const createTweetElement = function(tweetData) {
   return $tweet;
 };
 
+// run on click event / scrollTop button
 const goToTop = function() {
   $(document.documentElement).scrollTop(0);
   $('#new-tweet-form').slideDown();
   $('#tweet-text').focus();
 };
 
-const showTopBotton = function() {
+// control scrollTop button appear / disappear
+const showScrollBotton = function() {
   if ($(document.documentElement.scrollTop)[0] > 80) {
-    $("#scrollTop").css("display","block")
-    $(".writeTweet").css("visibility","hidden")
+    $("#scrollTop").css("display","block");
+    $(".writeTweet").css("visibility","hidden");
   } else {
-    $("#scrollTop").css("display","none")
-    $(".writeTweet").css("visibility","visible")
+    $("#scrollTop").css("display","none");
+    $(".writeTweet").css("visibility","visible");
   }
-}
+};
 
 // Document loaded!
 $(()=> {
   
   console.log("🟢 Document Ready");
 
-  // $('#new-tweet-form').hide();
-
-  $('nav').find('.dblAngel').on('click',() => {
-    if ( $('#new-tweet-form').first().is( ":hidden" ) ) {
+  // event handler (click) for "write new tweet"
+  $('nav').find('button').on('click',() => {
+    if ($('#new-tweet-form').first().is(":hidden")) {
       $('#new-tweet-form').slideDown();
       $('#tweet-text').focus();
     } else {
@@ -75,23 +76,24 @@ $(()=> {
     }
   });
 
+  // submit new tweet - ajax
   $('#new-tweet-form').submit(function(event) {
-    console.log('🟠 Prevent Old Fashion Submit');
-    event.preventDefault();
-    $(this).find('.errorMsg').text('').hide()
+    event.preventDefault(); // Prevent Old Fashion Submit
+    $(this).find('.errorMsg').text('').hide(); // hide error msg from before this moment!
+    
     // check if input is empty or too long!
     const inputLen = $(this).children('#tweet-text').val().trim().length;
     if (inputLen === 0) {
       $(this).find('.errorMsg').text('* Content Is Not Present!').slideDown();
-      return ;
+      return;
     }
     if (inputLen > 140) {
       $(this).find('.errorMsg').text('* Content Is Too Long!').slideDown();
-      return ;
+      return;
     }
     
     const data = $(this).serialize();
-    // disable button temprory
+    // disable submit button temprory
     $(this).find("button").prop('disabled',true);
 
     $.ajax({
@@ -100,33 +102,35 @@ $(()=> {
       data: data
     }).then(() => {
       console.log("🟢 Post Data Successfully!");
-      // in this success part. call loadTweets 
+      // in this success part. call loadTweets
       // then erase tweet-text, put cursor And trigger input event to couter shows correct number
-      // enable button
+      // enable submit button
       loadTweets();
       $('#tweet-text').val('').focus().trigger('input');
       $(this).find("button").prop('disabled',false);
     })
-    // in error part, just enable button
-    .catch (() => {
-      alert( "🛑🛑🛑 \n Error Occured @ Sending New Tweet" );
-      $(this).find("button").prop('disabled',false);
-    })
+    // in error situation, just enable button
+      .catch(() => {
+        alert("🛑🛑🛑 \n Error Occured @ Sending New Tweet");
+        $(this).find("button").prop('disabled',false);
+      });
   });
 
+  // get all saved tweets and send them as param to renderTweets() 
   const loadTweets = function() {
     $.ajax({
-    url: '/tweets',
-    method: 'GET' 
-    }).then(function (tweetsData) {
+      url: '/tweets',
+      method: 'GET'
+    }).then(function(tweetsData) {
       renderTweets(tweetsData);
     });
-  }
+  };
 
+  // call function to show tweets!
   loadTweets();
 
+  // on event of scroll call showTop
   $(window).scroll(() => {
-    showTopBotton();
-  })
-
+    showScrollBotton();
+  });
 });

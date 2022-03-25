@@ -1,0 +1,55 @@
+@import '_variables';
+
+nav {
+  position          : fixed;
+  top               : 0px;
+
+  z-index           : 2;
+    
+  height            : 120px;
+  width             : 100vw;
+  min-width         : 279px;
+  padding           : 1.5em;
+    
+  display           : flex;
+  justify-content   : space-between;
+    
+  color             : $nav-font-color;
+  background-color  : $nav-backround-color;
+
+  .logo {
+    font-family       : $secondary-font-family;
+    font-size         : 1.5em;
+  }
+
+  .writeTweet {
+    visibility        : visible;
+    line-height       : 100%;
+    text-align        : center;
+
+    button {
+      color             : $warning-font-color;
+      padding           : 0.3em;
+      background-color  :transparent;
+      border            :none;
+    }
+
+    &:hover button{
+      animation         : MoveUpDown 1s infinite;
+      cursor            : pointer;
+    }
+
+    .bold {
+      font-weight       : $bold;
+    }
+  }
+}
+
+@keyframes MoveUpDown {
+  0% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(12px);
+  }
+}
