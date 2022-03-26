@@ -32,6 +32,11 @@ nav {
       padding           : 0.3em;
       background-color  :transparent;
       border            :none;
+
+      &:focus {
+        outline         : none;
+        animation       : MoveUpDown 1s infinite;
+      }
     }
 
     &:hover button{

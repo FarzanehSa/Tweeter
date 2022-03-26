@@ -26,8 +26,14 @@ const createTweetElement = function(tweetData) {
   `);
 
   // Prevent Cross-Site Scripting by using .text();
-  const $p = $('<p>').addClass("tweet-body").text(tweetData.content.text);
-  
+  // recognize new line and show that in tweet page.
+  const arr = tweetData.content.text.split('\n')
+  const $p = $('<p>').addClass("tweet-body").text(arr[0]);
+  for (let i = 1; i < arr.length; i++) {
+    $p.append($('<br />'))
+    $p.append($('<snap>').text(arr[i]))
+  }
+
   const $footer = $(`
     <footer>
       <snap>${timeago.format(tweetData.created_at)}</snap>
@@ -85,14 +91,16 @@ $(()=> {
     const inputLen = $(this).children('#tweet-text').val().trim().length;
     if (inputLen === 0) {
       $(this).find('.errorMsg').text('* Content Is Not Present!').slideDown();
+      $(this).find("button").blur();
       return;
     }
     if (inputLen > 140) {
       $(this).find('.errorMsg').text('* Content Is Too Long!').slideDown();
+      $(this).find("button").blur();
       return;
     }
     
-    const data = $(this).serialize();
+    let data = $(this).serialize();
     // disable submit button temprory
     $(this).find("button").prop('disabled',true);
 

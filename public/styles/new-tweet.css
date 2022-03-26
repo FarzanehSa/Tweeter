@@ -44,6 +44,10 @@
   background-color: navy;
   cursor: pointer;
 }
+.new-tweet footer #row2 button:focus {
+  background-color: Azure;
+  color: navy;
+}
 .new-tweet footer #row2 output.out-of-range {
   color: Crimson;
 }

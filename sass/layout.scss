@@ -44,7 +44,8 @@ body {
 
     cursor            : pointer;
 
-    &:hover {
+    &:hover, &:focus {
+      outline         : none;
       animation       : Rotate 1s infinite;
     }
   }

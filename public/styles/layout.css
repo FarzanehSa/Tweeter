@@ -38,7 +38,8 @@ body #scrollTop {
   background-color: firebrick;
   cursor: pointer;
 }
-body #scrollTop:hover {
+body #scrollTop:hover, body #scrollTop:focus {
+  outline: none;
   animation: Rotate 1s infinite;
 }
 

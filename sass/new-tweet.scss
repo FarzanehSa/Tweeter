@@ -51,6 +51,11 @@
         color             : $button-font-color;
         background-color  : $tweet-button-backround-color;
         cursor            : pointer;
+        
+        &:focus {
+          background-color  : $button-font-color;
+          color             : $tweet-button-backround-color;
+        }
       }
 
       output.out-of-range {
