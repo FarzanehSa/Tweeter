@@ -81,8 +81,17 @@ body {
 
 @media only screen and (max-width: 1024px) {
   body > nav {
-    background-color  : transparent;
-    font-size         : 2.5vw;
+    background-color    : $header-background-color;
+    background-image    : $header-background-image;
+    box-shadow          : 0 0 3px 0 silver;
+    opacity             : 0.9;
+    font-size           : 2.5vw;
+    .logo {
+      opacity           : 1;
+    }
+  }
+  body .header .avatar {
+    height              : 160px;
   }
 }
 
@@ -107,16 +116,16 @@ body {
   }
 
   #userHandle {
-    order             :1;
+    order             : 1;
     align-self        : flex-end;
   }
 }
 
 @media only screen and (max-width: 280px) {
   body > nav {
-    font-size       : 5vw;
+    font-size         : 5vw;
     .writeTweet {
-      white-space   : nowrap;
+      white-space     : nowrap;
     }
   }
 }

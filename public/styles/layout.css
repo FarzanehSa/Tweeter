@@ -71,8 +71,18 @@ body #scrollTop:hover, body #scrollTop:focus {
 }
 @media only screen and (max-width: 1024px) {
   body > nav {
-    background-color: transparent;
+    background-color: #73a24e;
+    background-image: url("/images/subtle-white-feathers.png");
+    box-shadow: 0 0 3px 0 silver;
+    opacity: 0.9;
     font-size: 2.5vw;
+  }
+  body > nav .logo {
+    opacity: 1;
+  }
+
+  body .header .avatar {
+    height: 160px;
   }
 }
 @media only screen and (max-width: 769px) {

@@ -27,7 +27,7 @@ const createTweetElement = function(tweetData) {
 
   // Prevent Cross-Site Scripting by using .text();
   // recognize new line and show that in tweet page.
-  const arr = tweetData.content.text.split('\n')
+  const arr = tweetData.content.text.trim().split('\n')
   const $p = $('<p>').addClass("tweet-body").text(arr[0]);
   for (let i = 1; i < arr.length; i++) {
     $p.append($('<br />'))
