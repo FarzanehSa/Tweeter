@@ -25,13 +25,9 @@ nav .writeTweet button {
   padding: 0.3em;
   background-color: transparent;
   border: none;
-}
-nav .writeTweet button:focus {
-  outline: none;
   animation: MoveUpDown 1s infinite;
 }
 nav .writeTweet:hover button {
-  animation: MoveUpDown 1s infinite;
   cursor: pointer;
 }
 nav .writeTweet .bold {
