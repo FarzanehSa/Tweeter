@@ -6,11 +6,11 @@ Utilizing HTML, CSS, JS, jQuery and AJAX and built with Node and Express
 
 ## Final Product
 
-!["Screen 1025"]()
+!["Screen 1025"](https://github.com/FarzanehSa/Tweeter/blob/master/docs/Screen%20Shot%20-%201.png)
 
-!["Screen 780"]()
+!["Screen 780"](https://github.com/FarzanehSa/Tweeter/blob/master/docs/Screen%20Shot%20-%202.png  )
 
-!["browser mockup"]()
+!["browser mockup"](https://github.com/FarzanehSa/Tweeter/blob/master/docs/Screen%20Shot%20-%203.png)
 
 ## Dependencies
 
