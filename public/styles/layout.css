@@ -58,6 +58,9 @@ body #scrollTop:hover, body #scrollTop:focus {
     justify-content: center;
     gap: 5em;
   }
+  body nav {
+    opacity: 1;
+  }
 
   header.header {
     border-radius: 100px;
@@ -76,9 +79,6 @@ body #scrollTop:hover, body #scrollTop:focus {
     box-shadow: 0 0 3px 0 silver;
     opacity: 0.9;
     font-size: 2.5vw;
-  }
-  body > nav .logo {
-    opacity: 1;
   }
 
   body .header .avatar {

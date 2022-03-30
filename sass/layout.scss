@@ -66,6 +66,10 @@ body {
     grid-template-columns : 34% 50%;
     justify-content       : center;
     gap                   : 5em;
+
+    nav {
+      opacity             : 1;
+    }
   }
 
   header.header {
@@ -86,10 +90,8 @@ body {
     box-shadow          : 0 0 3px 0 silver;
     opacity             : 0.9;
     font-size           : 2.5vw;
-    .logo {
-      opacity           : 1;
-    }
   }
+
   body .header .avatar {
     height              : 160px;
   }
